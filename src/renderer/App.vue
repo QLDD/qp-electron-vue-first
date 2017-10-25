@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'qp-electron-vue-first'
+    name: 'app'
   }
 </script>
 
