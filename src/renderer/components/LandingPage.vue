@@ -1,12 +1,30 @@
 <template>
-  <div id="wrapper">
-    <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
-    <main>
+  <div id="landing">    
+    <div class="landing-main">      
       <div class="left-side">
         <span class="title">
           Welcome to your new project!
         </span>
         <system-information></system-information>
+      </div>
+
+      <div class="middle">
+        <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
+        <Form :model="formItem">
+          <FormItem prop="user">
+            <Input type="text" v-model="Username" placeholder="Username">
+              <Icon type="ios-person-outline" slot="prepend"></Icon>
+            </Input>
+          </FormItem>
+          <FormItem prop="password">
+            <Input type="password" v-model="password" placeholder="Password">
+              <Icon type="ios-locked-outline" slot="prepend"></Icon>
+            </Input>
+          </FormItem>
+          <FormItem>
+            <Button type="primary" @click="handleSubmit('formInline')">登录</Button>
+          </FormItem>
+        </Form>
       </div>
 
       <div class="right-side">
@@ -24,16 +42,23 @@
           <button class="alt" @click="open('https://electron.atom.io/docs/')">Electron</button>
           <button class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button>
         </div>
-      </div>
-    </main>
+      </div>      
+    </div>
   </div>
 </template>
 
 <script>
-  import SystemInformation from './LandingPage/SystemInformation'
-
+  import SystemInformation from './LandingPage/SystemInformation'  
   export default {
     name: 'landing-page',
+    date() {
+      return {
+        formItem: {
+          input: ''  
+        }
+              
+      }
+    },
     components: { SystemInformation },
     methods: {
       open (link) {
@@ -44,44 +69,59 @@
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+  /* @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro'); */
 
-  * {
+  /* * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
+  } */
 
-  body { font-family: 'Source Sans Pro', sans-serif; }
+  /* body { font-family: 'Source Sans Pro', sans-serif; } */
 
-  #wrapper {
-    background:
+  #landing {
+    /* background:
       radial-gradient(
         ellipse at top left,
         rgba(255, 255, 255, 1) 40%,
         rgba(229, 229, 229, .9) 100%
-      );
-    height: 100vh;
-    padding: 60px 80px;
-    width: 100vw;
-  }
-
-  #logo {
-    height: auto;
-    margin-bottom: 20px;
-    width: 420px;
-  }
-
-  main {
+      ); */
+    height: 100%;
+    width: 100%;    
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;         
+    background-color: #5789DC;    
+    background-size: cover;         
   }
 
-  main > div { flex-basis: 50%; }
+ 
+
+  .landing-main {
+    width: 90%;
+    height: 90%;    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .landing-main > div { flex-basis: 30%; }
 
   .left-side {
     display: flex;
     flex-direction: column;
+    background-color: white;
+  }
+
+  .middle {
+
+  }
+
+  #logo {
+    height: auto;
+    margin-bottom: 0px;
+    width: 200px;
   }
 
   .welcome {

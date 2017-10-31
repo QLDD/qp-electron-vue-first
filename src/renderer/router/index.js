@@ -7,11 +7,11 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'loading-page',
-      component: LoadingPage 
-    },
+    // {
+    //   path: '/',
+    //   name: 'loading-page',
+    //   component: LoadingPage 
+    // },
     {
       path: '/',
       name: 'landing-page',
