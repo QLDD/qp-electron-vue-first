@@ -1,12 +1,17 @@
 <template>
   <div id="app">
+    <div>
+      <window-angle></window-angle>
+    </div>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+  import WindowAngle from './components/BasicSettingPages/WindowAngle';
   export default {
-    name: 'app'
+    name: 'app',
+    components: { WindowAngle },
   }
 </script>
 

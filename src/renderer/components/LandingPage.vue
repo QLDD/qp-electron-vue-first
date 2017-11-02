@@ -55,7 +55,9 @@
       return {
         formItem: {
           input: ''  
-        }
+        },
+        Username: '',
+        password: ''
               
       }
     },
@@ -86,7 +88,7 @@
         rgba(255, 255, 255, 1) 40%,
         rgba(229, 229, 229, .9) 100%
       ); */
-    height: 100%;
+    height: 96%;
     width: 100%;    
     display: flex;
     flex-direction: column;
